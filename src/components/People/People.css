@@ -1,0 +1,13 @@
+.swapiContainer{
+    display: flex;
+    flex-wrap: wrap;
+    width: 55em;
+    justify-content: space-around;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}

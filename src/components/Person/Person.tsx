@@ -1,4 +1,5 @@
 import { PersonType } from '../../types';
+import './Person.css'
 
 interface PersonProps {
   person: PersonType
@@ -6,8 +7,8 @@ interface PersonProps {
 
 function Person({ person }: PersonProps) {
   return(
-      <div>
-        <h3>{person.name}</h3>
+      <div className='personContainer'>
+        <h3 className='characterName'>{person.name}</h3>
         <p>Species: {person.specie}</p>
         <div>
           <h4>Movies</h4>

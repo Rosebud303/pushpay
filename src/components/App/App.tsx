@@ -1,8 +1,11 @@
 import People from '../People';
+import'./App.css'
 
 function App() {
   return (
-    <People />
+    <div className='app'>
+      <People />
+    </div>
   );
 }
 

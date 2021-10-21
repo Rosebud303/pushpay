@@ -3,9 +3,11 @@ import React from 'react'
 import { fetchJson, fetchSpecies, fetchFilms } from '../../api'
 import { PersonType } from '../../types'
 import Person from '../Person'
+import './People.css'
 
 function People() {
   const [people, setPeople] = React.useState<PersonType[]>([])
+  const [searchBar, setSearchBar] = React.useState<String>('')
 
   React.useEffect(() => {
     fetchAll()
@@ -22,12 +24,23 @@ function People() {
         films: specie.filmsInfo.map((film: any) => film.title)
       }
     }));
-    
+  }
+
+  const searchingInput = () => {
+
+    let filteredPeople = people.filter((person: any) => {
+      return person.name.includes()
+    })
+    setPeople(filteredPeople)
   }
 
   return (
-    <div>
-      {people.map(person => <Person person={person} />)}
+    <div className='container'>
+      <h1>Star Wars API</h1>
+      <input onChange={()=>searchingInput()}/>
+      <div className='swapiContainer'>
+        {people.map(person => <Person person={person} />)}
+      </div>
     </div>
   )
 }
